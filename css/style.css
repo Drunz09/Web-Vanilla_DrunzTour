@@ -9,6 +9,10 @@
   font-family: "Raleway", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
 }
@@ -584,6 +588,11 @@ main {
   width: 100%;
   overflow-x: hidden;
   cursor: pointer;
+  scroll-snap-type: x mandatory;
+}
+
+.promo-list .list {
+  scroll-snap-align: center;
 }
 
 .promo-list .list img {
@@ -854,6 +863,7 @@ main {
   height: 300px;
   overflow: hidden;
   border-radius: 10px;
+  margin: auto;
 }
 
 .left-body .left-body-list img {

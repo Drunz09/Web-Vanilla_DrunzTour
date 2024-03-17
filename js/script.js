@@ -197,7 +197,7 @@ function resizeScroll() {
   const newsHeight = document.querySelector(".news-right").scrollHeight;
   const news = document.querySelector(".news-right .news-right-body");
 
-  if (newsHeight > galleryHeight) {
+  if (newsHeight > galleryHeight && screen.width > 992) {
     news.style.maxHeight = `${galleryHeight + 100}px`;
   }
 }
