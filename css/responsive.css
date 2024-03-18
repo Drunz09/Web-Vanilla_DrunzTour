@@ -193,6 +193,10 @@
     font-size: 32px;
   }
 
+  .slide img {
+    object-fit: cover;
+  }
+
   main {
     padding: 4rem 0;
   }
@@ -281,6 +285,14 @@
   .right-body-item .body-item-info p {
     font-size: 1.2rem;
     letter-spacing: 2px;
+  }
+
+  .footer-left {
+    flex-basis: 50%;
+  }
+
+  .footer-right {
+    flex-basis: 50%;
   }
 }
 
@@ -573,6 +585,23 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    padding: 4rem 2rem;
+  }
+
+  .footer-left {
+    flex-basis: 100%;
+  }
+
+  .footer-right {
+    flex-basis: 100%;
+  }
+
+  .footer-right p:last-child {
+    text-align: center;
   }
 }
 
