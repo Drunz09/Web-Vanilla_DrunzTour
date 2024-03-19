@@ -943,6 +943,147 @@ main {
   overflow: hidden; */
 }
 
+/* Section - Contact */
+.contact {
+  padding: 6rem 6rem 3rem 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-up {
+  flex-basis: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.contact-up h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.contact-up h3::after {
+  content: "";
+  height: 3px;
+  width: 60px;
+  background-color: var(--darkGreen);
+  display: block;
+  margin: 0.7rem auto;
+}
+
+.contact-up p {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #444;
+  width: 50%;
+  margin: auto;
+}
+
+.contact-left {
+  flex-basis: 55%;
+}
+
+.contact-left form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.6rem;
+}
+
+.contact-left form input,
+.contact-left form textarea {
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+  transition: all 0.2s ease-in;
+}
+
+.contact-left form input:focus,
+.contact-left form textarea:focus {
+  outline: none;
+  border-bottom: 2px solid green;
+}
+
+.contact-left form input:hover,
+.contact-left form textarea:hover {
+  border-bottom: 2px solid green;
+}
+
+.contact-left form button {
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  background-color: green;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+
+.contact-left form button:hover {
+  background-color: var(--darkGreen);
+}
+
+.contact-right {
+  flex-basis: 42%;
+}
+
+.contact-right-list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.contact-right-list > i {
+  border: 1px solid #fff;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: green;
+  transition: all 0.3s ease-in;
+}
+
+.contact-right-list > i:hover {
+  background-color: var(--darkGreen);
+}
+
+.contact-right-list .right-list-info {
+  width: 100%;
+}
+
+.contact-right-list .right-list-info h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.contact-right-list .right-list-info p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #444;
+}
+
+.contact-right-list .right-list-info i {
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  color: #444;
+  background-color: transparent;
+  margin: 0.3rem;
+  transition: all 0.3s ease-in;
+}
+
+.contact-right-list .right-list-info i:hover {
+  background-color: var(--darkGreen);
+  color: #fff;
+}
+
 /* Footer */
 footer {
   display: flex;
