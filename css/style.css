@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
 }
 
 html {
@@ -27,6 +26,7 @@ body {
   z-index: 100;
   padding: 20px 5%;
   transition: all 0.5s ease-out;
+  font-family: "Raleway", sans-serif;
 }
 
 .header.active {
@@ -101,6 +101,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
+  font-family: "Raleway", sans-serif;
 }
 
 .slider .slide {
@@ -612,7 +613,7 @@ main {
 }
 
 .list .list-info p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 300;
   color: #444;
   letter-spacing: 2px;
@@ -620,13 +621,23 @@ main {
 
 /* Section - Recomended Place */
 .recomended-list {
-  padding: 6rem 3rem 2rem;
+  padding: 6rem 3rem 0;
 }
 
 .recomended-list h2 {
   font-size: 2rem;
   font-weight: 300;
   text-align: center;
+  text-transform: uppercase;
+}
+
+.recomended-list h2::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  background-color: var(--darkGreen);
+  margin: 1rem auto;
 }
 
 .recomended-list .r-info-list {
@@ -640,7 +651,7 @@ main {
   content: "";
   flex-basis: 100%;
   height: 1px;
-  margin: 2rem auto 0 auto;
+  margin: 1.5rem auto 0 auto;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -672,7 +683,7 @@ main {
 
 .recomended-list .r-place-list {
   padding: 3rem 5rem;
-  max-height: 664px;
+  max-height: 764px;
   overflow-y: hidden;
   animation: showReverse 0.8s ease-in;
 }
@@ -684,7 +695,7 @@ main {
 
 @keyframes show {
   0% {
-    max-height: 664px;
+    max-height: 764px;
     opacity: 0.8;
   }
   40% {
@@ -718,7 +729,7 @@ main {
   }
 
   100% {
-    max-height: 664px;
+    max-height: 764px;
     opacity: 0.8;
   }
 }
@@ -771,7 +782,7 @@ main {
 
 .place-list .list img {
   width: 100%;
-  height: 300px;
+  height: 350px;
   border-radius: 10px;
   transition: all 0.5s ease-out;
   object-fit: cover;
@@ -791,27 +802,45 @@ main {
   position: absolute;
   align-self: flex-end;
   padding: 2rem;
+  text-shadow: 2px 2px #000;
 }
 
 .recomended-list .r-show-content {
   padding: 2rem 0;
   text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.r-show-content span {
+  display: none;
+  width: 100%;
+  height: 1px;
+  background-color: var(--darkGreen);
+}
+
+.r-show-content span.active {
+  display: block;
 }
 
 .r-show-content button {
-  padding: 0.5rem 1.2rem;
+  width: 100%;
+  padding: 0.6rem 0;
   border: 1px solid #000;
   border-radius: 6px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+  background-color: var(--darkGreen);
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 1px;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
-  background-color: var(--darkGreen);
-  cursor: pointer;
-  display: none;
   z-index: 2;
-  transition: all 1s ease-out;
+  display: none;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
 }
 
 .r-show-content button:hover {
@@ -820,12 +849,55 @@ main {
 
 .r-show-content button.active {
   margin: auto;
-  display: block;
+  display: flex;
+}
+
+.r-show-content button a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.r-show-content button i {
+  font-size: 1.2rem;
+  transform: rotate(45deg);
+  animation: rot 1s ease-in;
+}
+
+.r-show-content button i.active {
+  transform: rotate(0deg);
+  animation: rototo 1s ease-in;
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes rototo {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* Section - News */
 .news {
-  padding: 1rem 4rem;
+  padding: 5rem 4rem 2rem;
   display: flex;
   justify-content: center;
   gap: 1.5rem;

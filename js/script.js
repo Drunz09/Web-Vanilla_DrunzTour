@@ -170,14 +170,17 @@ function recommendedListContent() {
 
 function showBtnForRecommended() {
   const showBtn = document.querySelector(".r-show-content button");
+  const spanBtn = document.querySelector(".r-show-content span");
   const placeList = document.querySelector(".r-place-list");
   const placeListHeight = document.querySelector(".r-place-list").scrollHeight;
 
   window.addEventListener("load", () => {
-    if (placeListHeight > 715) {
+    if (placeListHeight > 815) {
       showBtn.classList.add("active");
-    } else if (placeListHeight < 715) {
+      spanBtn.classList.add("active");
+    } else if (placeListHeight < 815) {
       showBtn.classList.remove("active");
+      spanBtn.classList.remove("active");
       placeList.style.maxHeight = "100%";
     }
   });
@@ -185,9 +188,13 @@ function showBtnForRecommended() {
   showBtn.addEventListener("click", () => {
     placeList.classList.toggle("active");
     if (placeList.classList.contains("active")) {
-      showBtn.innerHTML = "Close";
+      showBtn.innerHTML = `
+      <a href="#list-place">
+        <i class="bx bx-x active"></i> Close
+      </a>`;
     } else {
-      showBtn.innerHTML = "Show All";
+      showBtn.innerHTML = `
+        <i class="bx bx-x"></i> Show All`;
     }
   });
 }
