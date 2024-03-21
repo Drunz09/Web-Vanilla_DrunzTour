@@ -98,7 +98,7 @@ body {
 
 .banner {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   font-family: "Raleway", sans-serif;
@@ -143,7 +143,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* background-color: rgba(0, 0, 0, 0.3); */
   backdrop-filter: blur(20px);
   display: flex;
   justify-content: flex-end;
@@ -153,7 +153,7 @@ body {
 
 .penetrate-blur h1 {
   font-size: 185px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.8);
 }
 
 .left-info .content {
@@ -362,7 +362,7 @@ main {
   overflow: hidden;
   position: relative;
   width: auto;
-  padding: 2rem 0;
+  padding: 1rem 0 2rem;
   background-color: #f1f1f1;
 }
 
@@ -428,6 +428,7 @@ main {
   height: 4px;
   background-color: var(--darkGreen);
   margin: 0.8rem auto 1rem auto;
+  border-radius: 8px;
 }
 
 .destinations > p {
@@ -558,6 +559,7 @@ main {
   transition: all 0.5s ease-out;
   color: #444;
   position: absolute;
+  z-index: 2;
 }
 
 .promo .promo-prev {
@@ -600,6 +602,7 @@ main {
   width: 515px;
   height: 250px;
   border-radius: 10px;
+  transition: all 0.5s ease-in;
 }
 
 .list .list-info {
@@ -610,13 +613,33 @@ main {
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
+  transition: all 0.3s ease-in;
+}
+
+.list:hover .list-info h5 {
+  color: var(--darkGreen);
+  letter-spacing: 1px;
+  text-shadow: 0 0 1px green;
 }
 
 .list .list-info p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 300;
   color: #444;
   letter-spacing: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.list:hover .list-info p {
+  color: #000;
+}
+
+.list .list-info p:hover {
+  overflow: scroll;
 }
 
 /* Section - Recomended Place */
@@ -638,6 +661,7 @@ main {
   height: 3px;
   background-color: var(--darkGreen);
   margin: 1rem auto;
+  border-radius: 8px;
 }
 
 .recomended-list .r-info-list {
@@ -663,13 +687,13 @@ main {
   transition: all 0.3s ease-out;
 }
 
-.recomended-list .r-info-list a:hover {
-  color: #000;
+.recomended-list .r-info-list a.active {
+  color: green;
+  font-weight: 500;
 }
 
-.recomended-list .r-info-list a:active {
-  color: #000;
-  font-weight: 500;
+.recomended-list .r-info-list a:hover {
+  color: green;
 }
 
 .recomended-list .r-info-list a::before {
@@ -937,6 +961,17 @@ main {
   overflow: hidden;
   border-radius: 10px;
   margin: auto;
+  position: relative;
+  filter: drop-shadow(0 0 3px #000);
+}
+
+.left-body .left-body-list:hover img {
+  transform: scale(105%);
+}
+
+.left-body .left-body-list:hover h4,
+.left-body .left-body-list:hover p {
+  transform: translateY(0);
 }
 
 .left-body .left-body-list img {
@@ -944,12 +979,41 @@ main {
   height: 100%;
   border-radius: 8px;
   object-fit: cover;
-  transition: all 0.5s ease-out;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.6s ease-in;
 }
 
-.left-body .left-body-list img:hover {
-  transform: scale(105%);
+.left-body .left-body-list h4 {
+  position: absolute;
+  padding: 2rem 0;
+  width: 100%;
+  bottom: 50%;
+  top: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 1px #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: translateY(-180px);
+  transition: all 0.6s ease-in;
+}
+
+.left-body .left-body-list p {
+  position: absolute;
+  padding: 2.3rem 0.5rem;
+  width: 100%;
+  top: 50%;
+  bottom: 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px #000;
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: translateY(180px);
+  transition: all 0.6s ease-in;
 }
 
 .news .news-right {
@@ -974,6 +1038,7 @@ main {
   border-radius: 6px;
   overflow: hidden;
   margin: 1rem 0;
+  cursor: pointer;
 }
 
 .right-body-item .body-item-img {
@@ -999,10 +1064,15 @@ main {
 
 .right-body-item .body-item-info h5 {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1px;
   color: #000;
   margin-bottom: 0.5rem;
+  transition: all 0.3s ease-in;
+}
+
+.right-body-item:hover .body-item-info h5 {
+  color: var(--darkGreen);
 }
 
 .right-body-item .body-item-info p {
@@ -1015,9 +1085,65 @@ main {
   overflow: hidden; */
 }
 
+/* Section - Services */
+.services {
+  padding: 5rem 6rem 0rem;
+}
+
+.services h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0.4rem auto 1.6rem;
+  text-align: center;
+}
+
+.services h3::after {
+  content: "";
+  display: block;
+  margin: 0.5rem auto;
+  width: 60px;
+  height: 3px;
+  border-radius: 8px;
+  background-color: var(--darkGreen);
+}
+
+.services .service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.service .service-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.service .service-list:hover img {
+  transform: rotateY(360deg);
+  filter: drop-shadow(0 0 2px green);
+}
+
+.service .service-list img {
+  object-fit: cover;
+  transition: all 1.5s ease-in-out;
+}
+
+.service .service-list p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #444;
+}
+
 /* Section - Contact */
 .contact {
-  padding: 6rem 6rem 3rem 6rem;
+  padding: 6rem 6rem 2rem 6rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1043,6 +1169,7 @@ main {
   background-color: var(--darkGreen);
   display: block;
   margin: 0.7rem auto;
+  border-radius: 8px;
 }
 
 .contact-up p {
@@ -1110,8 +1237,8 @@ main {
 }
 
 .contact-right-list > i {
-  border: 1px solid #fff;
-  box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #000;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.8);
   border-radius: 50%;
   padding: 0.5rem;
   font-size: 1.6rem;
@@ -1280,7 +1407,7 @@ footer {
 }
 
 .footer-icon a:hover {
-  background-color: #fff;
+  background-color: var(--darkGreen);
   text-shadow: none;
 }
 
@@ -1288,10 +1415,6 @@ footer {
   font-size: 25px;
   color: #fff;
   transition: all 0.8s ease-in-out;
-}
-
-.footer-icon a:hover i {
-  color: #000;
 }
 
 .footer-right p:last-child {

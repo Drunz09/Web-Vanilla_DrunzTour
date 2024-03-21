@@ -295,6 +295,22 @@
     letter-spacing: 2px;
   }
 
+  .services {
+    padding: 4rem 4rem;
+  }
+
+  .services .service {
+    flex-wrap: wrap;
+  }
+
+  .service .service-list {
+    flex-basis: 45%;
+  }
+
+  .service .service-list p {
+    width: 75%;
+  }
+
   .contact {
     padding: 4rem 4rem 2rem 4rem;
   }
@@ -619,6 +635,14 @@
     overflow: hidden;
   }
 
+  .services {
+    padding: 4rem 2rem 2rem;
+  }
+
+  .service .service-list {
+    flex-basis: 47%;
+  }
+
   .contact {
     padding: 4rem 2rem 2rem;
   }
@@ -816,6 +840,18 @@
 
   .right-body-item .body-item-info p {
     -webkit-line-clamp: 3;
+  }
+
+  .services {
+    padding: 0 2rem 3rem;
+  }
+
+  .service .service-list {
+    flex-basis: 100%;
+  }
+
+  .service .service-list p {
+    width: 100%;
   }
 }
 

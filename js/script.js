@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
   slideBtn();
   hiddenNav();
   imageSlider();
-  recommendedListContent();
+  btnSlide();
   showBtnForRecommended();
   resizeScroll();
 });
@@ -86,7 +86,6 @@ function slideBtn() {
 function hiddenNav() {
   const ham = document.querySelector(".ham-menu");
   const hamSpan = document.querySelectorAll(".ham-menu span");
-
   const hide = document.querySelector(".hidden");
   const hideText = document.querySelectorAll(".h-navbar a");
 
@@ -141,29 +140,29 @@ function imageSlider() {
   });
 }
 
-function recommendedListContent() {
+function btnSlide() {
+  const listbtn = document.querySelectorAll(".content .btn");
   const nameList = document.querySelectorAll(".r-info-list a");
   const contentList = document.querySelectorAll(".place-list");
 
-  nameList.forEach((e) => {
+  listbtn.forEach((e, i) => {
+    e.addEventListener("click", () => {
+      contentList.forEach((e) => e.classList.remove("active"));
+      nameList.forEach((e) => e.classList.remove("active"));
+
+      document.querySelector(`.r-info-list a:nth-child(${i + 1})`).classList.add("active");
+      document.querySelector(`.place-list:nth-child(${i + 1})`).classList.add("active");
+    });
+  });
+
+  nameList.forEach((e, i) => {
     e.addEventListener("click", (x) => {
       x.preventDefault();
       contentList.forEach((e) => e.classList.remove("active"));
+      nameList.forEach((e) => e.classList.remove("active"));
 
-      const attHref = e.getAttribute("href");
-      if (attHref == "#indonesia") {
-        document.querySelector(".place-list:nth-child(1)").classList.add("active");
-      } else if (attHref == "#malaysia") {
-        document.querySelector(".place-list:nth-child(2)").classList.add("active");
-      } else if (attHref == "#thailand") {
-        document.querySelector(".place-list:nth-child(3)").classList.add("active");
-      } else if (attHref == "#singapore") {
-        document.querySelector(".place-list:nth-child(4)").classList.add("active");
-      } else if (attHref == "#vietname") {
-        document.querySelector(".place-list:nth-child(5)").classList.add("active");
-      } else if (attHref == "#japan") {
-        document.querySelector(".place-list:nth-child(6)").classList.add("active");
-      }
+      document.querySelector(`.r-info-list a:nth-child(${i + 1})`).classList.add("active");
+      document.querySelector(`.place-list:nth-child(${i + 1})`).classList.add("active");
     });
   });
 }
