@@ -108,18 +108,18 @@ function hiddenNav() {
 }
 
 function imageSlider() {
-  const sliderPromo = document.querySelector(".promo");
+  // const sliderPromo = document.querySelector(".promo");
   const prevBtn = document.querySelector(".promo-prev");
   const nextBtn = document.querySelector(".promo-next");
   const promoList = document.querySelector(".promo-list");
 
-  sliderPromo.addEventListener("wheel", (e) => {
-    sliderPromo.style.scrollBehavior = "auto";
-    if (screen.width >= 1400) {
-      e.preventDefault();
-      promoList.scrollLeft += e.deltaY;
-    }
-  });
+  // sliderPromo.addEventListener("wheel", (e) => {
+  //   sliderPromo.style.scrollBehavior = "auto";
+  //   if (screen.width >= 1400) {
+  //     e.preventDefault();
+  //     promoList.scrollLeft += e.deltaY;
+  //   }
+  // });
 
   prevBtn.addEventListener("click", () => {
     promoList.style.scrollBehavior = "smooth";
@@ -144,6 +144,7 @@ function btnSlide() {
   const listbtn = document.querySelectorAll(".content .btn");
   const nameList = document.querySelectorAll(".r-info-list a");
   const contentList = document.querySelectorAll(".place-list");
+  const footerList = document.querySelectorAll(".left-list ul:nth-child(1) li");
 
   listbtn.forEach((e, i) => {
     e.addEventListener("click", () => {
@@ -158,6 +159,16 @@ function btnSlide() {
   nameList.forEach((e, i) => {
     e.addEventListener("click", (x) => {
       x.preventDefault();
+      contentList.forEach((e) => e.classList.remove("active"));
+      nameList.forEach((e) => e.classList.remove("active"));
+
+      document.querySelector(`.r-info-list a:nth-child(${i + 1})`).classList.add("active");
+      document.querySelector(`.place-list:nth-child(${i + 1})`).classList.add("active");
+    });
+  });
+
+  footerList.forEach((e, i) => {
+    e.addEventListener("click", () => {
       contentList.forEach((e) => e.classList.remove("active"));
       nameList.forEach((e) => e.classList.remove("active"));
 
